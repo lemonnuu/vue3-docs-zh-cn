@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VTSwitch, VTIconChevronDown } from '@vue/theme'
-import { useRoute } from 'vitepress'
+import { useRoute, useData, withBase } from 'vitepress'
 import { inject, Ref } from 'vue'
 import {
   preferCompositionKey,
@@ -10,10 +10,15 @@ import {
 } from './preferences'
 
 const route = useRoute()
+const basePath = useData().site.value.base
 const show = $computed(() =>
-  /^\/(guide|tutorial|examples|style-guide)\//.test(route.path)
+  /^(guide|tutorial|examples|style-guide)\//.test(
+    route.path.replace(basePath, '')
+  )
 )
-const showSFC = $computed(() => !/^\/guide|style-guide/.test(route.path))
+const showSFC = $computed(
+  () => !/^guide|style-guide/.test(route.path.replace(basePath, ''))
+)
 
 let isOpen = $ref(true)
 
@@ -90,7 +95,7 @@ function useToggleFn(
         <a
           class="switch-link"
           title="关于 API 风格偏好"
-          href="/guide/introduction.html#api-styles"
+          :href="withBase('/guide/introduction.html#api-styles')"
           @click="closeSideBar"
           >?</a
         >
@@ -103,11 +108,13 @@ function useToggleFn(
           :aria-checked="preferSFC"
           @click="toggleSFC()"
         />
-        <label class="sfc-label" @click="toggleSFC(true)">单文件组件</label>
+        <label class="sfc-label" @click="toggleSFC(true)"
+          >单文件组件</label
+        >
         <a
           class="switch-link"
           title="关于单文件组件"
-          href="/guide/scaling-up/sfc.html"
+          :href="withBase('/guide/scaling-up/sfc.html')"
           @click="closeSideBar"
           >?</a
         >

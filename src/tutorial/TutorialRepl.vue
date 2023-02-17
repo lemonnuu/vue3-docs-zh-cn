@@ -15,6 +15,7 @@ import {
   VTIconChevronRight,
   VTLink
 } from '@vue/theme'
+import { withBase } from 'vitepress'
 
 const store = new ReplStore({
   defaultVueRuntimeURL: `https://unpkg.com/vue@${version}/dist/vue.esm-browser.js`
@@ -70,7 +71,7 @@ function updateExample(scroll = false) {
   let hash = location.hash.slice(1)
   if (!data.hasOwnProperty(hash)) {
     hash = 'step-1'
-    location.replace(`/tutorial/#${hash}`)
+    location.replace(withBase(`/tutorial/#${hash}`))
   }
   currentStep.value = hash
 

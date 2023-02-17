@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import SiteMap from './SiteMap.vue';
+import SiteMap from './SiteMap.vue'
 // import NewsLetter from './NewsLetter.vue'
 import { load, data, base } from './sponsors'
-import SponsorsGroup from './SponsorsGroup.vue'
+import { withBase } from 'vitepress'
+// import SponsorsGroup from './SponsorsGroup.vue'
 // NOTE: hide the home video
 // https://github.com/vuejs-translations/docs-zh-cn/issues/177
 // import VueMasteryModal from './VueMasteryModal.vue'
@@ -25,7 +26,7 @@ onMounted(async () => {
     <p class="actions">
       <!-- NOTE: hide the home video -->
       <!-- <vue-mastery-modal /> -->
-      <a class="get-started" href="/guide/introduction.html">
+      <a class="get-started" :href="withBase('/guide/introduction.html')">
         快速上手
         <svg
           class="icon"
@@ -39,7 +40,7 @@ onMounted(async () => {
           />
         </svg>
       </a>
-      <a class="setup" href="/guide/quick-start.html">安装</a>
+      <a class="setup" :href="withBase('/guide/quick-start.html')">安装</a>
     </p>
   </section>
 
@@ -75,9 +76,9 @@ onMounted(async () => {
         <span>{{ description }}</span>
       </template>
     </template>
-    <a v-else class="lead" href="/sponsor/"
-      >中国区铂金赞助位 点击了解更多</a
-    >
+    <p v-else class="lead tagline accent" style="font-size: 24px">
+      Mochi 笔记版
+    </p>
   </section>
 
   <section id="highlights" class="vt-box-container">
@@ -100,12 +101,12 @@ onMounted(async () => {
     </div>
   </section>
 
-  <section id="sponsors">
+  <!-- <section id="sponsors">
     <h2>Platinum Sponsors</h2>
     <SponsorsGroup tier="platinum" placement="landing" />
     <h2>Gold Sponsors</h2>
     <SponsorsGroup tier="gold" placement="landing" />
-  </section>
+  </section> -->
 
   <SiteMap />
   <!-- <NewsLetter /> -->

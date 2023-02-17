@@ -38,15 +38,15 @@ const nav: ThemeConfig['nav'] = [
     text: '生态系统',
     activeMatch: `^/ecosystem/`,
     items: [
-      {
-        text: '资源',
-        items: [
-          { text: '合作伙伴', link: '/partners/' },
-          { text: '主题', link: '/ecosystem/themes' },
-          { text: '找工作', link: 'https://vuejobs.com/?ref=vuejs' },
-          { text: 'T-Shirt 商店', link: 'https://vue.threadless.com/' }
-        ]
-      },
+      // {
+      //   text: '资源',
+      //   items: [
+      //     { text: '合作伙伴', link: '/partners/' },
+      //     { text: '主题', link: '/ecosystem/themes' },
+      //     { text: '找工作', link: 'https://vuejobs.com/?ref=vuejs' },
+      //     { text: 'T-Shirt 商店', link: 'https://vue.threadless.com/' }
+      //   ]
+      // },
       {
         text: '官方库',
         items: [
@@ -54,72 +54,72 @@ const nav: ThemeConfig['nav'] = [
           { text: 'Pinia', link: 'https://pinia.vuejs.org/zh/' },
           { text: '工具链指南', link: '/guide/scaling-up/tooling.html' }
         ]
-      },
-      {
-        text: '视频课程',
-        items: [
-          {
-            text: 'Vue Mastery',
-            link: 'https://www.vuemastery.com/courses/'
-          },
-          {
-            text: 'Vue School',
-            link: 'https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown'
-          }
-        ]
-      },
-      {
-        text: '帮助',
-        items: [
-          {
-            text: 'Discord 聊天室',
-            link: 'https://discord.com/invite/HBherRA'
-          },
-          {
-            text: 'GitHub 论坛',
-            link: 'https://github.com/vuejs/core/discussions'
-          },
-          { text: 'DEV Community', link: 'https://dev.to/t/vue' }
-        ]
-      },
-      {
-        text: '动态',
-        items: [
-          { text: '博客', link: 'https://blog.vuejs.org/' },
-          { text: 'Twitter', link: 'https://twitter.com/vuejs' },
-          { text: '活动', link: 'https://events.vuejs.org/' },
-          { text: '新闻简报', link: '/ecosystem/newsletters' }
-        ]
       }
+      // {
+      //   text: '视频课程',
+      //   items: [
+      //     {
+      //       text: 'Vue Mastery',
+      //       link: 'https://www.vuemastery.com/courses/'
+      //     },
+      //     {
+      //       text: 'Vue School',
+      //       link: 'https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown'
+      //     }
+      //   ]
+      // },
+      // {
+      //   text: '帮助',
+      //   items: [
+      //     {
+      //       text: 'Discord 聊天室',
+      //       link: 'https://discord.com/invite/HBherRA'
+      //     },
+      //     {
+      //       text: 'GitHub 论坛',
+      //       link: 'https://github.com/vuejs/core/discussions'
+      //     },
+      //     { text: 'DEV Community', link: 'https://dev.to/t/vue' }
+      //   ]
+      // },
+      // {
+      //   text: '动态',
+      //   items: [
+      //     { text: '博客', link: 'https://blog.vuejs.org/' },
+      //     { text: 'Twitter', link: 'https://twitter.com/vuejs' },
+      //     { text: '活动', link: 'https://events.vuejs.org/' },
+      //     { text: '新闻简报', link: '/ecosystem/newsletters' }
+      //   ]
+      // }
     ]
-  },
-  {
-    text: '关于',
-    activeMatch: `^/about/`,
-    items: [
-      { text: '常见问题', link: '/about/faq' },
-      { text: '团队', link: '/about/team' },
-      { text: '版本发布', link: '/about/releases' },
-      {
-        text: '社区指南',
-        link: '/about/community-guide'
-      },
-      { text: '行为规范', link: 'https://vuejs.org/about/coc.html' },
-      {
-        text: '纪录片',
-        link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
-      }
-    ]
-  },
-  {
-    text: '赞助',
-    link: '/sponsor/'
-  },
-  {
-    text: '合作伙伴',
-    link: '/partners/',
-    activeMatch: `^/partners/`
   }
+  // {
+  //   text: '关于',
+  //   activeMatch: `^/about/`,
+  //   items: [
+  //     { text: '常见问题', link: '/about/faq' },
+  //     { text: '团队', link: '/about/team' },
+  //     { text: '版本发布', link: '/about/releases' },
+  //     {
+  //       text: '社区指南',
+  //       link: '/about/community-guide'
+  //     },
+  //     { text: '行为规范', link: 'https://vuejs.org/about/coc.html' },
+  //     {
+  //       text: '纪录片',
+  //       link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
+  //     }
+  //   ]
+  // },
+  // {
+  //   text: '赞助',
+  //   link: '/sponsor/'
+  // },
+  // {
+  //   text: '合作伙伴',
+  //   link: '/partners/',
+  //   activeMatch: `^/partners/`
+  // }
 ]
 
 export const sidebar: ThemeConfig['sidebar'] = {
@@ -587,12 +587,13 @@ const i18n: ThemeConfig['i18n'] = {
   ariaToC: '当前页面的目录',
   ariaMainNav: '主导航',
   ariaMobileNav: '移动版导航',
-  ariaSidebarNav: '侧边栏导航',
+  ariaSidebarNav: '侧边栏导航'
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
+  base: '/vue3-docs-zh-cn',
   lang: 'zh-CN',
   title: 'Vue.js',
   description: 'Vue.js - 渐进式的 JavaScript 框架',
@@ -642,23 +643,23 @@ export default defineConfigWithTheme<ThemeConfig>({
     sidebar,
     i18n,
 
-    localeLinks: [
-      {
-        link: 'https://vuejs.org',
-        text: 'English',
-        repo: 'https://github.com/vuejs/docs'
-      },
-      {
-        link: 'https://ja.vuejs.org',
-        text: '日本語',
-        repo: 'https://github.com/vuejs-translations/docs-ja'
-      },
-      {
-        link: '/translations/',
-        text: '帮助我们翻译！',
-        isTranslationsDesc: true
-      }
-    ],
+    // localeLinks: [
+    //   {
+    //     link: 'https://vuejs.org',
+    //     text: 'English',
+    //     repo: 'https://github.com/vuejs/docs'
+    //   },
+    //   {
+    //     link: 'https://ja.vuejs.org',
+    //     text: '日本語',
+    //     repo: 'https://github.com/vuejs-translations/docs-ja'
+    //   },
+    //   {
+    //     link: '/translations/',
+    //     text: '帮助我们翻译！',
+    //     isTranslationsDesc: true
+    //   }
+    // ],
 
     algolia: {
       indexName: 'vuejs_cn2',
@@ -675,9 +676,9 @@ export default defineConfigWithTheme<ThemeConfig>({
     // },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/' },
-      { icon: 'twitter', link: 'https://twitter.com/vuejs' },
-      { icon: 'discord', link: 'https://discord.com/invite/HBherRA' }
+      { icon: 'github', link: 'https://github.com/vuejs/' }
+      // { icon: 'twitter', link: 'https://twitter.com/vuejs' },
+      // { icon: 'discord', link: 'https://discord.com/invite/HBherRA' }
     ],
 
     editLink: {

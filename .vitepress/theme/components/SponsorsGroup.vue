@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { withBase } from 'vitepress'
 import { onMounted, onUnmounted } from 'vue'
 import { SponsorData, data, base, load } from './sponsors'
 
@@ -69,7 +70,7 @@ function track(interest?: boolean) {
     </template>
     <a
       v-if="placement !== 'page' && tier !== 'special'"
-      href="/sponsor/"
+      :href="withBase('/sponsor/')"
       class="sponsor-item action"
       @click="track(true)"
       >Your logo</a
